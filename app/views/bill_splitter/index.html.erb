@@ -1,0 +1,31 @@
+<h1>Welcome to Bill Splitter</h1>
+
+<%= form_tag bill_splitter_path do%>
+<%# bill_splitter_submit_path is not the path you render your form, it's the path you post your form %>
+  <div class="">
+    <span>$</span><%= label_tag :amount %>
+    <br>
+    <%= text_area_tag :amount %>
+  </div>
+  <div class="">
+    <span>%</span><%= label_tag :tax %>
+    <br>
+    <%= text_area_tag :tax %>
+  </div>
+  <div>
+    <span>%</span><%= label_tag :tip %>
+    <br>
+    <%= text_area_tag :tip %>
+  </div>
+  <div>
+    <%= label_tag :number%>
+    <br>
+    <%= text_area_tag :number %>
+  </div>
+  <br>
+<%# will generates a submit button for the form with label 'Contact Us' %>
+  <%= submit_tag 'Submit' %>
+<% end %>
+<% if params[:result]%>
+  <h2>Every Person Must Pay <%= params[:result] %></h2>
+<% end %>
